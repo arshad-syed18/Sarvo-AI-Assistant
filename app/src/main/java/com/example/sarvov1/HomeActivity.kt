@@ -2,6 +2,9 @@ package com.example.sarvov1
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -49,9 +52,20 @@ class HomeActivity : AppCompatActivity() {
                 else -> false
             }
         }
+        addMessage("Hello User! How can I help?", false) // change text if needed
+        val sendButton = findViewById<Button>(R.id.sendButton)
+        val messageInputField = findViewById<EditText>(R.id.messageInputField)
 
-        addMessage("Hello AI!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",true)  // TODO: replace with user input
-        addMessage("Hello User!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",false) // TODO: replace with api call
+        // API link https://deep-friendly-kodiak.ngrok-free.app/user-input
+
+        sendButton.setOnClickListener {
+            val message = messageInputField.text.toString()
+            if (message.isNotBlank()) {
+                addMessage(message, true)
+                messageInputField.text.clear()
+                addMessage("Hello User!",false) // TODO: replace with api call
+            }
+        }
     }
 
     private fun addMessage(message: String, isUser: Boolean) {
