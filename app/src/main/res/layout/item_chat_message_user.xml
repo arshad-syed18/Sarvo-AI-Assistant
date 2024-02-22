@@ -8,7 +8,7 @@
     android:id="@+id/messageTextView"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:padding="8dp"
+    android:padding="10dp"
     android:maxWidth="240dp"
     android:layout_marginBottom="8dp"
     android:background="@drawable/bubble_user"
