@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "734729429633",
+    "firebase_url": "https://sarvo-auth-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "sarvo-auth",
+    "storage_bucket": "sarvo-auth.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:734729429633:android:bf204490bc7efc7afee380",
+        "android_client_info": {
+          "package_name": "com.example.sarvov1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "734729429633-pgue4nag114f3d5uuukgvpcc8t624rvo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdchUVvCih9w5gVN1zGNSWaGX_aLNhNpk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "734729429633-pgue4nag114f3d5uuukgvpcc8t624rvo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
