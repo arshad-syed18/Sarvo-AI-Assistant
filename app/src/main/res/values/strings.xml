@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">sarvo v1</string>
+    <string name="app_name">Sarvo</string>
     <string name="login">Login</string>
     <string name="background">Background</string>
     <string name="drawer_open">Open Navigation</string>
