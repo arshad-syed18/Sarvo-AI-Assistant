@@ -7,6 +7,7 @@ from fastapi import FastAPI
 import uvicorn
 from pyngrok import ngrok
 import requests
+from pydantic import BaseModel
 
 # set log for transformers to error only, to remove warnings in terminal
 logging.get_logger("transformers").setLevel(logging.ERROR)
@@ -41,11 +42,15 @@ def count_tokens(conversation_history):
     total_tokens = sum(len(tokenizer.encode(message["content"])) for message in conversation_history)
     return total_tokens
 
+# Model input
+class UserInput(BaseModel):
+    input: str
 
-@app.post("/user-input/")
-async def receive_user_input(user_input: str):
+@app.post("/user-input")
+async def receive_user_input(user_input: UserInput):
+    inputText = user_input.input
     # Add user input to conversation history
-    conversation_history.append({"role": "user", "content": user_input})
+    conversation_history.append({"role": "user", "content": inputText})
     conversation_history.append({"role": "assistant", "content": ""})
 
     # Generate response
@@ -66,16 +71,18 @@ async def receive_user_input(user_input: str):
 
     # Count tokens and remove old messages if necessary
     total_tokens = count_tokens(conversation_history)
-    if total_tokens > 4096:
+    if total_tokens > 2000:
         del conversation_history[2:4]
         total_tokens = count_tokens(conversation_history)
 
     # Return LLM response
+    print("success")
     return {"assistant_response": output_filtered}
 
-# Ngrok setup
-#ngrok_tunnel = ngrok.connect(8000)  # Expose FastAPI endpoint
+# Run below command in terminal to make tunnel
+#  ngrok http --domain=deep-friendly-kodiak.ngrok-free.app 8000
 #print("Public URL:", ngrok_tunnel.public_url)
+
 
 # Start FastAPI server
 
