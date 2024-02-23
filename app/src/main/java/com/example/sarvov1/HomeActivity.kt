@@ -1,19 +1,20 @@
 package com.example.sarvov1
 
-import androidx.appcompat.app.AppCompatActivity
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.appcompat.widget.Toolbar
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.navigation.NavigationView
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity(), ApiCallback {
 
     private val messages = mutableListOf<ChatMessage>()
     private lateinit var adapter: ChatAdapter
@@ -52,10 +53,9 @@ class HomeActivity : AppCompatActivity() {
                 else -> false
             }
         }
-        addMessage("Hello User! How can I help?", false) // change text if needed
         val sendButton = findViewById<Button>(R.id.sendButton)
         val messageInputField = findViewById<EditText>(R.id.messageInputField)
-
+        addMessage("Hello User! How can I help?", false) // change text if needed
         // API link https://deep-friendly-kodiak.ngrok-free.app/user-input
 
         sendButton.setOnClickListener {
@@ -63,7 +63,11 @@ class HomeActivity : AppCompatActivity() {
             if (message.isNotBlank()) {
                 addMessage(message, true)
                 messageInputField.text.clear()
-                addMessage("Hello User!",false) // TODO: replace with api call
+                if(isNetworkAvailable()){
+                    makeApiCall(message)
+                }else{
+                    Toast.makeText(this, "No internet connection", Toast.LENGTH_LONG).show()
+                }
             }
         }
     }
@@ -71,5 +75,33 @@ class HomeActivity : AppCompatActivity() {
     private fun addMessage(message: String, isUser: Boolean) {
         messages.add(ChatMessage(message, isUser))
         adapter.notifyItemInserted(messages.size - 1)
+    }
+    private fun isNetworkAvailable(): Boolean {
+        val connectivityManager = getSystemService(CONNECTIVITY_SERVICE) as ConnectivityManager
+        val network  = connectivityManager.activeNetwork
+        val capabilities = connectivityManager.getNetworkCapabilities(network) ?: return false
+        return when {
+            capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> true
+            capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> true
+            capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) -> true
+            else -> false
+        }
+    }
+
+    private fun makeApiCall(userMessage: String){
+        val apiHelper = ApiHelper(this)
+        apiHelper.getResponse(userMessage)
+    }
+
+    override fun onApiSuccess(response: String) {
+        runOnUiThread{
+            addMessage(response, false)
+        }
+    }
+
+    override fun onApiError(error: String) {
+        runOnUiThread{
+            addMessage("Error connecting to backend!", false)
+        }
     }
 }
