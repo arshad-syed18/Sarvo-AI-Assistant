@@ -41,7 +41,11 @@ class SignupActivity : AppCompatActivity() {
                             userId?.let {
                                 firebaseDatabase.reference.child("users").child(userId).setValue(userData)
                                     .addOnSuccessListener {
-                                        val intent = Intent(this, LoginActivity::class.java)
+                                        val intent = Intent(this, SetupActivity::class.java).apply {
+                                            putExtra("email", email)
+                                            putExtra("name", name)
+                                            putExtra("phone", phno)
+                                        }
                                         startActivity(intent)
                                     }
                                     .addOnFailureListener { exception ->
