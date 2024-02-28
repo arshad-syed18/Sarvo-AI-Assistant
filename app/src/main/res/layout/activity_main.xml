@@ -4,50 +4,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bgcolors"
     tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="76dp"
         android:contentDescription="@string/background"
+        android:cropToPadding="false"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/land" />
+        app:srcCompat="@drawable/sarvologo" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="164dp"
-        android:background="#D81B60"
+        android:layout_marginBottom="212dp"
+        android:background="@drawable/buttonbg"
+        android:paddingLeft="65dp"
+        android:paddingRight="65dp"
         android:text="Log In"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="HardcodedText,VisualLintOverlap" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="84dp"
-        android:background="#D81B60"
-        android:text="sign up"
+        android:layout_marginBottom="140dp"
+        android:background="@drawable/buttonbg"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:text="Register"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="HardcodedText" />
 

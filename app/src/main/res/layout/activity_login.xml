@@ -4,31 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg2"
     tools:context=".LoginActivity">
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="32dp"
         android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/bg" />
+        app:srcCompat="@drawable/sarvologo"
+        android:contentDescription="@string/logo" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/login2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="164dp"
-        android:background="#D81B60"
+        android:layout_marginBottom="84dp"
+        android:background="@drawable/buttonbg"
+        android:paddingLeft="65dp"
+        android:paddingRight="65dp"
         android:text="Log In"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="HardcodedText,VisualLintOverlap" />
 
@@ -36,41 +42,43 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="60dp"
-        android:text="TextView"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/welcome_back"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="#000000"
+        android:textColor="#0037FF"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Welcome Back!" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-    <EditText
-        android:id="@+id/loginmail"
-        android:layout_width="333dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="80dp"
-        android:ems="10"
-        android:hint="Enter Email ID"
-        android:inputType="textPersonName"
-        android:textColor="#000000"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <EditText
+    <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/loginpass"
         android:layout_width="332dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="44dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
         android:ems="10"
-        android:hint="Enter Password"
+        android:hint="@string/password"
+        android:background="@drawable/edittextbg"
         android:inputType="textPassword"
-        android:password="true"
         android:singleLine="false"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.607"
+        app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginmail" />
+        app:layout_constraintTop_toBottomOf="@+id/loginmail"
+        app:met_floatingLabel="highlight" />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/loginmail"
+        android:layout_width="333dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="64dp"
+        android:ems="10"
+        android:hint="@string/email"
+        android:inputType="textPersonName"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:met_floatingLabel="highlight" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

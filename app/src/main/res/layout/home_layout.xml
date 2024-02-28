@@ -14,7 +14,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/appBarLayout"
-        app:srcCompat="@drawable/bg" />
+        app:srcCompat="@drawable/bg"
+        android:contentDescription="@string/background" />
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -47,6 +48,7 @@
             <!-- TODO: Add profile and app name later -->
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
+    <!--
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="0dp"
@@ -58,7 +60,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
-            <!-- Use icons and text, whichever fits properly -->
+
             <Button
                 android:id="@+id/button"
                 android:layout_width="wrap_content"
@@ -87,7 +89,7 @@
                 android:layout_weight="1"
                 android:text="four" />
         </LinearLayout>
-
+-->
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="0dp"
@@ -111,21 +113,21 @@
             android:importantForAutofill="no"
             android:inputType="text"
             android:minHeight="48dp"
-            android:hint="Enter your message" />
+            android:hint="@string/enter_your_message" />
 
         <Button
             android:id="@+id/sendButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="send" />
+            android:text="@string/send" />
         <!-- TODO: add icons later -->
         <Button
             android:id="@+id/voiceButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="voice" />
+            android:text="@string/voice" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -143,11 +145,11 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:text="Chat with your assistant!"
+        android:layout_marginStart="16dp"
+        android:text="@string/chat_with_your_assistant"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/recyclerView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,31 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg2"
     tools:context=".SignupActivity">
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="12dp"
         android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/bg" />
+        app:srcCompat="@drawable/sarvologo"
+        android:contentDescription="@string/logo" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/signup2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="108dp"
-        android:background="#8E24AA"
+        android:layout_marginBottom="52dp"
+        android:background="@drawable/buttonbg"
+        android:paddingHorizontal="60dp"
         android:text="CONTINUE"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="HardcodedText" />
 
@@ -36,78 +41,83 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="64dp"
-        android:text="TextView"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="212dp"
+        android:text="@string/register"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Register!" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+    <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/signupphno"
         android:layout_width="327dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:textColor="#000000"
         android:outlineProvider="none"
-        android:text="Enter Phone Number"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signupname" />
+        android:hint="@string/phone_number"
+        app:layout_constraintStart_toStartOf="@+id/signupname"
+        app:layout_constraintTop_toBottomOf="@+id/signupname"
+        app:met_floatingLabel="highlight" />
 
-    <EditText
+    <com.rengwuxian.materialedittext.MaterialEditText
+        app:met_floatingLabel="highlight"
         android:id="@+id/signupname"
         android:layout_width="327dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="184dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="264dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:textColor="#000000"
         android:outlineProvider="none"
-        android:text="Enter Name"
+        android:hint="@string/name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+    <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/signuppass1"
         android:layout_width="327dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:ems="10"
-        android:hint="Enter Password"
+        android:hint="@string/password"
         android:inputType="textPassword"
+        android:textColor="#000000"
         android:outlineProvider="none"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signupemail" />
+        app:layout_constraintStart_toStartOf="@+id/signupemail"
+        app:layout_constraintTop_toBottomOf="@+id/signupemail"
+        app:met_floatingLabel="highlight" />
 
-    <EditText
+    <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/signuppass2"
         android:layout_width="327dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:ems="10"
-        android:hint="Re-Enter Password"
+        android:hint="@string/re_enter_password"
         android:inputType="textPassword"
+        android:textColor="#000000"
         android:outlineProvider="none"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signuppass1" />
+        app:layout_constraintStart_toStartOf="@+id/signuppass1"
+        app:layout_constraintTop_toBottomOf="@+id/signuppass1"
+        app:met_floatingLabel="highlight" />
 
-    <EditText
+    <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/signupemail"
         android:layout_width="327dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:textColor="#000000"
         android:outlineProvider="none"
-        android:text="Enter Email ID"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signupphno" />
+        android:hint="@string/email"
+        app:layout_constraintStart_toStartOf="@+id/signupphno"
+        app:layout_constraintTop_toBottomOf="@+id/signupphno"
+        app:met_floatingLabel="highlight" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
