@@ -43,9 +43,9 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-
+        // TODO: in home implement profile setup access
         if(firebaseAuth.currentUser != null){
-            val intent = Intent(this, SetupActivity::class.java)
+            val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
         }
     }
