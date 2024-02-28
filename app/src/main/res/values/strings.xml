@@ -5,4 +5,16 @@
     <string name="drawer_open">Open Navigation</string>
     <string name="drawer_close">Close Navigation</string>
     <string name="menu">menu</string>
+    <string name="logo">logo</string>
+    <string name="welcome_back">Welcome Back!</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="register">Register</string>
+    <string name="name">Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="re_enter_password">Re-Enter Password</string>
+    <string name="enter_your_message">Enter your message</string>
+    <string name="send">send</string>
+    <string name="chat_with_your_assistant">Chat with your assistant!</string>
+    <string name="voice">voice</string>
 </resources>

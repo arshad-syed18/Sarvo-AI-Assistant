@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="@color/grey"
-        android:contentDescription="TODO"
-        android:scaleType="fitXY"
-        android:src="@drawable/ic_launcher_foreground"
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/menu_header_bg"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/img_sarvo" />
-    <!-- TODO: Add stuff here later for header -->
-    <!-- for round icon use cardview, set corner radius to half of width or height -->
+        app:layout_constraintTop_toTopOf="parent">
 
-
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_weight="1"
+            android:paddingBottom="12dp"
+            app:srcCompat="@drawable/sarvologo" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
