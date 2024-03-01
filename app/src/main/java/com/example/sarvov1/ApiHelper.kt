@@ -14,7 +14,6 @@ interface ApiCallback {
     fun onApiError(error: String)
 }
 class ApiHelper (private val apiCallback: ApiCallback){
-    private var userMessage = "Hello"
 
     private val BASE_URL = "https://deep-friendly-kodiak.ngrok-free.app/user-input"
 
@@ -29,7 +28,7 @@ class ApiHelper (private val apiCallback: ApiCallback){
                 connection.connectTimeout = 60000
                 connection.readTimeout = 60000
 
-                val requestBody = "{\"input\":\"$userMessage\"}"
+                val requestBody = "{\"input\":\"$input\"}"
 
                 val outputStream = DataOutputStream(connection.outputStream)
                 outputStream.write(requestBody.toByteArray())
