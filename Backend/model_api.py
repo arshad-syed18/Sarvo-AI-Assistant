@@ -64,8 +64,17 @@ async def receive_user_input(user_input: UserInput):
                                    pad_token_id=tokenizer.eos_token_id,
                                    temperature=0.7)
     output = tokenizer.batch_decode(generated_ids)[0]
-    output_filtered = output[output.rfind('</s>') + len('</s>'):].strip()
-    # print("output: "+str(output_filtered))
+    # Check if the last token is </s>, if not, append it
+    if output[-4:] != "</s>":
+        print("appended </s>")
+        output += "</s>"
+        
+    output_filtered = output.split('</s>')[-2].strip()
+    # output_filtered = output[output.rfind('</s>') + len('</s>'):].strip()
+    if output_filtered == '' or output_filtered == None:
+        print("OutputNonfiltered: "+output)
+    else:
+        print("output: "+str(output_filtered))
 
     # Update conversation history
     conversation_history[-1]["content"] = output_filtered
