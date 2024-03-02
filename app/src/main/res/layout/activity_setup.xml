@@ -17,101 +17,115 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/bg" />
+        app:srcCompat="@drawable/bg2" />
 
-    <EditText
+    <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/keenname"
         android:layout_width="327dp"
-        android:layout_height="48dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="132dp"
         android:ems="10"
+        android:hint="Enter Keen Name"
         android:inputType="textPersonName"
         android:outlineProvider="none"
-        android:text="Enter Keen Name"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:met_floatingLabel="highlight" />
 
-    <EditText
+    <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/keenph"
         android:layout_width="327dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="40dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
+        android:hint="Enter Keen Phone Number:"
         android:inputType="textPersonName"
         android:outlineProvider="none"
-        android:text="Enter Keen Phone Number:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/keenname" />
+        app:layout_constraintStart_toStartOf="@+id/keenname"
+        app:layout_constraintTop_toBottomOf="@+id/keenname"
+        app:met_floatingLabel="highlight" />
 
-    <EditText
+    <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/hobbies"
         android:layout_width="327dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="40dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:gravity="start|top"
+        android:hint="Enter hobbies of User:"
         android:inputType="textMultiLine"
-        android:text="Enter hobbies of User:"
-        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintStart_toStartOf="@+id/keenph"
         app:layout_constraintTop_toBottomOf="@+id/keenph" />
 
-    <EditText
+    <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/desc"
         android:layout_width="327dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="40dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:gravity="start|top"
+        android:hint="Description of User:"
         android:inputType="textMultiLine"
-        android:text="Description of User:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hobbies" />
+        app:layout_constraintStart_toStartOf="@+id/hobbies"
+        app:layout_constraintTop_toBottomOf="@+id/hobbies"
+        app:met_floatingLabel="highlight" />
 
-    <EditText
+    <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/likes"
         android:layout_width="327dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="40dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:gravity="start|top"
+        android:hint="Likes of the User:"
         android:inputType="textMultiLine"
-        android:text="Likes of the User:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/desc" />
+        app:layout_constraintStart_toStartOf="@+id/desc"
+        app:layout_constraintTop_toBottomOf="@+id/desc"
+        app:met_floatingLabel="highlight" />
 
-    <EditText
+    <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/dislikes"
         android:layout_width="327dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="40dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:gravity="start|top"
+        android:hint="Dislikes of the User:"
         android:inputType="textMultiLine"
-        android:text="Dislikes of the User:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/likes" />
+        app:layout_constraintStart_toStartOf="@+id/likes"
+        app:layout_constraintTop_toBottomOf="@+id/likes"
+        app:met_floatingLabel="highlight" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/signup3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="108dp"
-        android:background="#8E24AA"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/buttonbg"
+        android:paddingLeft="65dp"
+        android:paddingRight="65dp"
         android:text="signup"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="78dp"
+        android:text="Setup Profile"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#0037FF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
